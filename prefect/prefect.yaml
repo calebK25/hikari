@@ -1,0 +1,11 @@
+name: hikari
+prefect-version: 2.14.0
+
+deployments:
+  - name: nightly-ingest
+    entrypoint: src/flows/nightly_ingest.py:nightly_ingest_flow
+    schedule:
+      cron: "0 2 * * *"  # 2 AM daily
+    work_pool:
+      name: hikari
+      work_queue_name: default 
