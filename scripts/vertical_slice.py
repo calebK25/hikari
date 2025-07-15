@@ -29,7 +29,7 @@ context = " ".join([h.payload["text"] for h in hits.points])
 # Use OpenRouter with Kimi Dev 72B model
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="OPENROUTER_API_KEY"
 )
 
 resp = client.chat.completions.create(
